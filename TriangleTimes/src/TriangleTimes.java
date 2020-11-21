@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TriangleTimes {
@@ -9,13 +10,15 @@ public class TriangleTimes {
 		for (int i=0;i<3;i++) {
 			ar[i]=sc.nextInt();
 		}
+		Arrays.sort(ar);
+		
 		if (ar[0]+ar[1]+ar[2]!=180) {
 			System.out.println("Error");
 		}
-		else if (ar[0]==60 && ar[1]==60 && ar[2]==60) {
+		else if (ar[0]==60) {
 			System.out.println("Equilateral");
 		} 
-		else if (ar[0]==ar[1] || ar[0]==ar[2] || ar[1]==ar[2]) {
+		else if (ar[0]==ar[1] || ar[1]==ar[2]) {
 			System.out.println("Isosceles");
 		}
 		else {
